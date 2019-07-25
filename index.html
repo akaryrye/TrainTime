@@ -4,24 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- Bootstrap / custom stylesheet -->
+    <!-- Bootstrap / Moment.js / Custom Stylesheet -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css"/>
     <title>Train Time</title>
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-4 box">
-                    <h1 class="click">click me</h1>
+    <!--
+        Inputs: 
+            Train Name (text)
+            Destination (text)
+            Next Arrival (time) (text, or a number input?)
+            Time between arrivals (text, number of minutes)
+    -->
+
+    <div class="container-fluid mx-auto">
+        <div class="row-fluid mt-4 d-flex justify-content-around flex-column flex-md-row">
+            <div class="col-3 box">
+                    <h1 class="click">Train Tim!</h1>
             </div>
-            <div class="col-4 box">
-                <h1 class="click">click me</h1>
+            <div class="col-3 box">
+                <h1 class="click">Train Tim!!</h1>
             </div>
-            <div class="col-4 box">
-                    <h1 class="click">click me</h1>
+            <div class="col-3 box">
+                    <h1 class="click">Train Tim!!!</h1>
             </div>
+        </div>
+        <form class="row mt-4 d-flex justify-content-around flex-column flex-md-row">
+            <div class="col-md-3 form-group">
+                <label for="train-name">Train Name</label>
+                <input type="text" class="form-control" id="train-name" placeholder="Train Name">
+            </div>
+            <div class="col-md-3 form-group">
+                <label for="destination">Destination</label>
+                <input type="text" class="form-control" id="destination" placeholder="Destination">
+            </div>
+            <div class="col-md-3 form-group">
+                <label for="next-arrival">Next Arrival</label>
+                <input type="text" class="form-control" id="next-arrival" placeholder="Next Arrival">
+            </div>
+            <div class="col-md-3 form-group">
+                <label for="time-between">Time Between</label>
+                <input type="text" class="form-control" id="time-between" placeholder="Time Between">
+            </div>
+            <button type="submit" class="btn-lg col btn-primary" id="submit">Submit</button>
+        </form>
+        <div class="row mt-4 d-flex flex-column">
+            <h1>Output:</h1>
+            <h3 id="name">name</h3>
+            <h3 id="dest">destination</h3>
+            <h3 id="nextArr">next arrival</h3>
+            <h3 id="interval">time between trains</h3>
         </div>
     </div>
     

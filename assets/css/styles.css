@@ -1,0 +1,11 @@
+body {
+    box-sizing: border-box;
+}
+
+.click {
+    color: red;
+}
+
+.box {
+    border: 2px solid black;
+}

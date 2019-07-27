@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- Bootstrap / Moment.js / Custom Stylesheet -->
+    <!-- Bootstrap / Moment.js / Firebase / Custom Stylesheet -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-database.js"></script>
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css"/>
     <title>Train Time</title>
@@ -53,10 +55,12 @@
         </form>
         <div class="row mt-4 d-flex flex-column">
             <h1>Output:</h1>
-            <h3 id="name">name</h3>
-            <h3 id="dest">destination</h3>
-            <h3 id="nextArr">next arrival</h3>
-            <h3 id="interval">time between trains</h3>
+            <div id="output">
+                <h3 id="name">name</h3>
+                <h3 id="dest">destination</h3>
+                <h3 id="nextArr">next arrival</h3>
+                <h3 id="interval">time between trains</h3>
+            </div>
         </div>
     </div>
     

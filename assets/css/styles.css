@@ -1,11 +1,41 @@
 body {
     box-sizing: border-box;
+    max-width: 960px;
+    margin: 0 auto;
+    background-color: #e4ce9e;
 }
 
-.click {
-    color: red;
-}
-
-.box {
+#header {
+    background-color: #8e8ec7;
+    color: rgb(138, 3, 3);
+    margin: 10px auto;
     border: 2px solid black;
+    border-radius: 10px;
+}
+
+#form {
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+#input {
+    margin: 20px;
+    padding: 10px;
+}
+
+#hour-min {
+    display: flex;
+    
+}
+
+#submit {
+    width: 200px;
+    margin: 0 auto;
+    background-color: #8e8ec7;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+#submit:hover {
+    background-color: #8e8ec785; 
 }

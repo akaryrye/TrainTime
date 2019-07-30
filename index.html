@@ -5,70 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Bootstrap / Moment.js / Firebase / Custom Stylesheet -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-database.js"></script>
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="assets/css/styles.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
     <title>Train Time</title>
 </head>
 
 <body>
-    <!--
-        Inputs: 
-            Train Name (text)
-            Destination (text)
-            Next Arrival (time) (text, or a number input?)
-            Time between arrivals (text, number of minutes)
-    -->
-
     <div class="container-fluid mx-auto">
-        <div class="row-fluid mt-4 d-flex justify-content-around flex-column flex-md-row">
-            <div class="col-3 box">
-                    <h1 class="click">Train Tim!</h1>
-            </div>
-            <div class="col-3 box">
-                <h1 class="click">Train Tim!!</h1>
-            </div>
-            <div class="col-3 box">
-                    <h1 class="click">Train Tim!!!</h1>
-            </div>
+        <div class="row d-flex justify-content-around flex-column flex-sm-row" id="header">
+            <h1 id="title">Train Time!!</h1>
+            <div id="curr-time"></div>
         </div>
-        <form class="row mt-4 d-flex justify-content-around flex-column flex-md-row">
-            <div class="col-md-3 form-group">
+        <form class="row mt-4 d-flex justify-content-around flex-column" id="form">
+            <div class="row form-group input">
                 <label for="train-name">Train Name</label>
                 <input type="text" class="form-control" id="train-name" placeholder="Train Name">
             </div>
-            <div class="col-md-3 form-group">
+            <div class="row form-group input">
                 <label for="destination">Destination</label>
                 <input type="text" class="form-control" id="destination" placeholder="Destination">
             </div>
-            <div class="col-md-3 form-group">
-                <label for="next-arrival">Next Arrival</label>
-                <input type="text" class="form-control" id="next-arrival" placeholder="Next Arrival">
+            <div class="row form-group input">
+                <label for="next-arrival">First Train</label>
+                <input type="time" class="form-control" id="next-arrival" min="00:00" max="23:59" value="00:00" required>
             </div>
-            <div class="col-md-3 form-group">
+            <div class="row form-group input">
                 <label for="time-between">Time Between</label>
-                <input type="text" class="form-control" id="time-between" placeholder="Time Between">
+                <div id="hour-min">
+                    <input type="number" class="form-control" id="time-between" min="00" max="24" required placeholder="Hours">
+                    <input type="number" class="form-control" id="time-between" min="00" max="59" required placeholder="Minutes">
+                </div>
+                
             </div>
             <button type="submit" class="btn-lg col btn-primary" id="submit">Submit</button>
         </form>
         <div class="row mt-4 d-flex flex-column">
-            <h1>Output:</h1>
-            <div id="output">
-                <h3 id="name">name</h3>
-                <h3 id="dest">destination</h3>
-                <h3 id="nextArr">next arrival</h3>
-                <h3 id="interval">time between trains</h3>
-            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                    <th scope="col">name</th>
+                    <th scope="col">destination</th>
+                    <th scope="col">next arrival</th>
+                    <th scope="col">time between</th>
+                    </tr>
+                </thead>
+                <tbody id="output">
+                    <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
-    
 
 </body>
 <!-- Jquery.js / Popper.js / Bootstrap.js -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
 <script type="text/javascript" src="assets/js/app.js"></script>
 </html>

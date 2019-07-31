@@ -31,13 +31,13 @@
             </div>
             <div class="row form-group input">
                 <label for="next-arrival">First Train</label>
-                <input type="time" class="form-control" id="next-arrival" min="00:00" max="23:59" value="00:00" required>
+                <input type="number" class="form-control" id="first-arrival" min="0000" max=2359 value="0600" required>
             </div>
             <div class="row form-group input">
                 <label for="time-between">Time Between</label>
                 <div id="hour-min">
-                    <input type="number" class="form-control" id="time-between" min="00" max="24" required placeholder="Hours">
-                    <input type="number" class="form-control" id="time-between" min="00" max="59" required placeholder="Minutes">
+                    <input type="number" class="form-control" id="hour-btw" min="00" max="24" required placeholder="Hrs">
+                    <input type="number" class="form-control" id="min-btw" min="00" max="59" required placeholder="Min">
                 </div>
                 
             </div>
@@ -54,12 +54,7 @@
                     </tr>
                 </thead>
                 <tbody id="output">
-                    <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    </tr>
+                    
                 </tbody>
             </table>
         </div>
